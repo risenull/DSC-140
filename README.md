@@ -8,3 +8,6 @@ A contingency table comparing two categorical columns. Include a chi-square test
 Identify at least two sets of numerical that it makes sense to compare against one another.
 
 This is all for the excel sheet of Titanic_Train.
+
+There is a R file included now with 4 seperate codes, they do this for the file https://d2l.mountunion.edu/d2l/api/le/1.12/59208/content/topics/937817/file?stream=false
+They have  cluster charts bar graphs and a pie graph
