@@ -1,0 +1,52 @@
+custdata <- read.table("custdata.tsv", header=TRUE, sep="\t")
+custdata <- custdata[!is.na(custdata$Income), ]
+plot(density(custdata$Income), main="Income Distribution", xlab="Income", ylab="Density", col="blue")
+abline(v=mean(custdata$Income), col="red")
+
+
+custdata <- read.table("custdata.tsv", header=TRUE, sep="\t")
+custdata <- custdata[!is.na(custdata$Income), ]
+plot(density(custdata$Income), main="Income Distribution", xlab="Income", ylab="Density", col="blue")
+abline(v=mean(custdata$Income), col="red")
+
+
+# Problem 3: Survey Data Analysis
+# Problem 3B: Clustering Analysis (K-means Clustering)
+
+# Step 1: Load the data
+survey_data <- read.csv(file.choose(), header=TRUE)
+
+# Step 2: Subset the data for clustering (using Miles and Games only)
+cluster_data <- survey_data[, c("Miles", "Games")]
+
+# Step 3: Apply k-means clustering with 2 clusters
+set.seed(123)  # To ensure reproducibility
+kmeans_result <- kmeans(cluster_data, centers=2)
+
+# Step 4: Plot the data with points colored by clustering
+plot(survey_data$Miles, survey_data$Games, col=kmeans_result$cluster, pch=19,
+     main="Clustered Data: Miles vs. Games", xlab="Miles", ylab="Games")
+
+# Step 5: Assign colors to the 'Like' categories
+color_map <- c("largeDoses" = "blue", "smallDoses" = "green", "didntLike" = "red")
+
+# Step 6: Use the color map to assign colors to the points based on the 'Like' column
+plot(survey_data$Miles, survey_data$Games, col=color_map[survey_data$Like], pch=19,
+     main="Data Colored by Like", xlab="Miles", ylab="Games")
+
+
+
+# Problem 2: Load the custdata.tsv file
+custdata <- read.table(file.choose(), header=TRUE, sep="\t")
+
+# Clean the data by removing rows with missing or NA values in housing.type
+custdata <- custdata[!is.na(custdata$housing.type), ]
+
+# Create a bar chart for housing type
+barplot(table(custdata$housing.type), 
+        main="Distribution of Housing Type", 
+        xlab="Housing Type", 
+        ylab="Count", 
+        col="lightblue", 
+        las=2, # Rotate axis labels for readability
+        cex.names=0.7) # Adjust label size if needed
