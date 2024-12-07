@@ -11,3 +11,6 @@ This is all for the excel sheet of Titanic_Train.
 
 There is a R file included now with 4 seperate codes, they do this for the file https://d2l.mountunion.edu/d2l/api/le/1.12/59208/content/topics/937817/file?stream=false
 They have  cluster charts bar graphs and a pie graph
+
+For REPORT A and REPORT B, the code included is for the exam.csv file where it combines machine learning and statistical data to analyze student performances
+
